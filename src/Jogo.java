@@ -1,10 +1,6 @@
-import java.time.LocalDate;
-
-public class Jogo {
+public class Jogo extends Conteudo { //Reaproveitar atributos desde que você deixe explicito a herança, jogo extende de conteúdo.
     //Atributos/Propriedades/Campos
-    String titulo;
     String plataforma;
-    LocalDate dataLancamento; //Ao invés de 'Date', usar 'LocalDate' por questões de fuso-horário.
 
     //Para facilitar a descrição e transformar tudo em String de forma automática, usamos o botão direito do mouse, clicamos em 'generate', logo após em 'tostring()'.
     @Override
