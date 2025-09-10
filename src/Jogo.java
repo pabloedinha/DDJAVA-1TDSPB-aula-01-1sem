@@ -5,10 +5,10 @@ public class Jogo extends Conteudo { //Reaproveitar atributos desde que você de
     //Para facilitar a descrição e transformar tudo em String de forma automática, usamos o botão direito do mouse, clicamos em 'generate', logo após em 'tostring()'.
     @Override
     public String toString() {
-        return "Jogo{" +
+        return "Jogo {" +
                 "titulo = '" + titulo + '\'' +
                 ", plataforma = '" + plataforma + '\'' +
-                ", dataLancamento = " + dataLancamento +
+                ", data de lançamento = " + dataLancamento +
                 '}';
     }
 }

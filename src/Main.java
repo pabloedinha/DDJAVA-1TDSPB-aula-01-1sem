@@ -1,4 +1,3 @@
-import java.time.LocalDate; //Import do LocalDate, nova utilidade da biblioteca que veremos mais a frente.
 import java.util.ArrayList; //Import do ArrayList para criar a lista de conteúdos.
 import java.util.Scanner; //Import do Scanner para ser usado pelo nosso sistema.
 
@@ -36,16 +35,13 @@ public class Main {
                 var opcao = scan.nextInt(); //Scan a próxima int, selecionando uma das 4 opções.
                 scan.nextLine(); //Scan.nextLine() SEMPRE após o scan.nextInt().
 
-                if (opcao == 1) { //se a opção for igual a 1, o programa vai apresentar o que está dentro dele, '==' é uma comparação, '=' é uma atribuição.
-                    JogoService.AdicionarJogo(scan, conteudo);
-                } else if (opcao == 2) {
-                    JogoService.listarJogos(conteudo);
-                } else if (opcao == 3) {
-                JogoService.RemoverJogo(scan, conteudo);
-                } else if (opcao == 4) //Caso selecionada a opção 4, o programa vai fechar com 'System.exit'.
-                    System.exit(0);
-                else
-                    System.out.println("Opção inválida!"); //Caso selecionada qualquer outra opção que não seja as que temos disponíveis, display de mensagem 'opção inválida'.
+                switch (opcao) { //Usado para deixar o código mais clean, só da pra ser usado quando criamos uma classe separada da main que faz toda a organização e função.
+                    case 1 -> JogoService.AdicionarJogo(scan, conteudo);  //se a opção for igual a 1, o programa vai apresentar o que está dentro dele, '==' é uma comparação, '=' é uma atribuição.
+                    case 2 -> JogoService.listarJogos(conteudo); //Não tem 'scan', pois o ele não vai ser usado para listar os jogos da Array.
+                    case 3 -> JogoService.RemoverJogo(scan, conteudo);
+                    case 4 -> System.exit(0); //Caso selecionada a opção 4, o programa vai fechar com 'System.exit'.
+                    default ->  System.out.println("Opção inválida!"); //Caso selecionada qualquer outra opção (default) que não seja as que temos disponíveis, display de mensagem 'opção inválida'.
+                }
             }
         }
     }
